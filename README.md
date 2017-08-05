@@ -8,7 +8,7 @@ The easiest way to install memoize is with [`npm`][npm].
 [npm]: https://www.npmjs.com/
 
 ```sh
-npm i memoize
+npm i memoize-promise-js
 ```
 
 Alternately, download the source.
