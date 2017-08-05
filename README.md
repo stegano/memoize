@@ -14,7 +14,7 @@ npm i memoize-promise-js
 Alternately, download the source.
 
 ```sh
-git clone https://github.com/ternjs/acorn.git
+git clone https://github.com/stegano/memoize.git
 ```
 
 ## Examples
