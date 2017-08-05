@@ -13,6 +13,9 @@ describe("Memoize", () => {
       });
     });
     expect(execute).to.be.instanceOf(Promise);
+    expect(cache.execute.bind(null, "Execute Test", () => {
+      return "Not Promise";
+    })).to.throw();
   });
   it("Hit test", done => {
     // 1, - update
