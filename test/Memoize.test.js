@@ -45,4 +45,52 @@ describe("Memoize", () => {
       });
     }, 4000);
   }).timeout(5000 * 10);
+  it("Graceful test", done => {
+    cache = new Memoize({
+      graceful: true,
+      expiredTime: 1000
+    });
+    // 1, - update
+    cache.execute("gracefulTest", () => {
+      return new Promise(resolve => {
+        resolve(1);
+      });
+    }).then(v => {
+      expect(v).to.be.equal(1);
+    });
+    // 2, - hit
+    setTimeout(() => {
+      cache.execute("gracefulTest", () => {
+        return new Promise(resolve => {
+          resolve(1);
+        });
+      }).then(v => {
+        expect(v).to.be.equal(1);
+      });
+    }, 1500);
+    // 3, - gracefully update
+    setTimeout(() => {
+      cache.execute("gracefulTest", () => {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(2);
+          }, 100);
+        });
+      }).then(v => {
+        expect(v).to.be.equal(1);
+        done();
+      });
+    }, 3500);
+    // 4, - update
+    setTimeout(() => {
+      cache.execute("gracefulTest", () => {
+        return new Promise(resolve => {
+          resolve(2);
+        });
+      }).then(v => {
+        expect(v).to.be.equal(2);
+        done();
+      });
+    }, 4000);
+  }).timeout(5000 * 10);
 });
