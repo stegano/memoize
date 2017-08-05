@@ -8,7 +8,7 @@ var Memoize = function (settings) {
   _settings.expiredTime = Number(_settings.expiredTime) || 3 * 1000;
   _settings.graceful = typeof _settings.graceful === "boolean" ? _settings.graceful : false;
   /**
-   * executor
+   * @memberOf Memoize
    * @param {String} key
    * @param {Function} yourFunction
    * @param {Number} [expiredTime]
