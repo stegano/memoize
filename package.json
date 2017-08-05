@@ -1,7 +1,7 @@
 {
   "name": "memoize-promise-js",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Memoize is a simple library that remembers the function execution results and can respond immediately.",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha ./test",
@@ -16,5 +16,14 @@
     "eslint-plugin-standard": "^3.0.1",
     "jsdoc": "^3.5.3",
     "mocha": "^3.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stegano/memoize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stegano/memoize/issues"
+  },
+  "engines": { "node": ">= 0.4.0" },
+  "keywords": ["memoize", "cache", "promise"]
 }
