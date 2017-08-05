@@ -23,7 +23,7 @@ var Memoize = function (settings) {
       ret = cache[key].data;
     } else {
       var executedFunc = yourFunction();
-      if (_graceful && cache[key].data) {
+      if (_graceful && cache[key] && cache[key].data) {
         ret = cache[key].data;
         cache[key] = _genCacheItem(executedFunc, _expiredTime);
       } else {
