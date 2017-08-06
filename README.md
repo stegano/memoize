@@ -1,4 +1,6 @@
 # Memoize
+[![NPM version](https://img.shields.io/npm/v/memoize-promise-js.svg)](https://www.npmjs.com/package/memoize-promise-js)
+
 Memoize is a simple cache library that remembers the function execution results and can respond immediately.
 
 ## Installation
@@ -22,12 +24,13 @@ git clone https://github.com/stegano/memoize.git
 ```javascript
 var Memoize = require("memoize");
 var chace = new Memoize({
+    // Global settings.
     expiredTime: 3000,
     graceful: false
 });
 
 var testFunction = () => {
-    /** return type is must be Promise */
+    /** Return type is must be `Promise` */
     return new Promise(resolve => {
         setTimeout(() => {
             resolve("Proecced data.");
