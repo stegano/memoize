@@ -37,6 +37,7 @@ var Memoize = function (settings) {
     return ret;
   };
   /**
+   * @memberOf Memoize
    * @private
    * @param {String} key
    * @return {Boolean}
@@ -53,6 +54,8 @@ var Memoize = function (settings) {
   }
 
   /**
+   * @memberOf Memoize
+   * @private
    * @param {Promise} executedFunc
    * @param {Number} expiredTime
    * @return {Object}
