@@ -1,5 +1,7 @@
 # Memoize
 [![NPM version](https://img.shields.io/npm/v/memoize-promise-js.svg)](https://www.npmjs.com/package/memoize-promise-js)
+[![GitHub issues](https://img.shields.io/github/issues-raw/stegano/memoize.svg)](https://github.com/stegano/memoize)
+[![Travis](https://img.shields.io/travis/stegano/memoize.svg)](https://travis-ci.org/stegano/memoize)
 
 Memoize is a simple cache library that remembers the function execution results and can respond immediately.
 
