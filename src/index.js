@@ -59,8 +59,8 @@ var Memoize = function (settings) {
    * @param {Function} callbackFunction
    * */
   this.on = (eventName, callbackFunction) => {
-    var ret = false;
-    if (eventList.includes(eventName)) {
+    var ret = eventList.indexOf(eventName) !== -1;
+    if (ret) {
       eventEmitter.on(eventName, callbackFunction);
       ret = true;
     }
@@ -73,8 +73,8 @@ var Memoize = function (settings) {
    * @param {Function} callbackFunction
    * */
   this.off = (eventName, callbackFunction) => {
-    var ret = false;
-    if (ret = eventList.includes(eventName)) {
+    var ret = eventList.indexOf(eventName) !== -1;
+    if (ret) {
       eventEmitter.removeEventListener(eventName, callbackFunction);
       ret = true;
     }
